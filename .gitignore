@@ -16,3 +16,7 @@ node_modules/
 __pycache__/
 .venv/
 venv/
+
+# 运行期数据：生效配置与扫描历史
+data/
+

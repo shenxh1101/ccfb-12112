@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XSS 靶场 · 白名单净化器</title>
+<link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🛡</span>
+    <div>
+      <h1>XSS 靶场 / 白名单净化器</h1>
+      <p class="sub">本地沙箱执行 · 决策可追溯 · 修复可回灌</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-page="payloads" class="tab active">载荷库</button>
+    <button data-page="config" class="tab">净化器配置</button>
+    <button data-page="scan" class="tab">扫描结果</button>
+    <button data-page="remediation" class="tab">修复建议</button>
+  </nav>
+</header>
+
+<main id="view" class="view"></main>
+
+<div id="toast" class="toast" hidden></div>
+
+<script type="module" src="/web/app.js"></script>
+</body>
+</html>

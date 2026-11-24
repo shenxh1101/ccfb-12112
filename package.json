@@ -1,0 +1,20 @@
+{
+  "name": "xss-sanitizer-range",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "本地 XSS 靶场 + 自研白名单 HTML 净化器（零依赖）",
+  "bin": {
+    "xss-scan": "./bin/scan.mjs"
+  },
+  "scripts": {
+    "start": "node bin/server.mjs",
+    "scan": "node bin/scan.mjs",
+    "test": "node --test test/unit/",
+    "test:e2e": "node test/e2e/run-e2e.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

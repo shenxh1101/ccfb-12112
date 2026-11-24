@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>XSS 扫描 harness（受控本地页面）</title>
+<style>html,body{margin:0;padding:0;background:#111;color:#eee;font:12px monospace}</style>
+</head>
+<body>
+<div id="harness-root">harness running</div>
+<script type="module">
+  // 仅被无头 Chrome 加载；把执行器挂到 window 供 Node 侧 Runtime.evaluate 调用
+  const harness = await import('./harness.js');
+  window.__harness = {
+    runJob: (job) => harness.runJob(job),
+    FRAME_HOOK_SOURCE: harness.FRAME_HOOK_SOURCE
+  };
+  window.__canaryEvents = [];
+  window.__harnessReady = true;
+</script>
+</body>
+</html>
